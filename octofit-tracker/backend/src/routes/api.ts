@@ -4,6 +4,13 @@ import { Activity, LeaderboardEntry, Team, User, Workout } from '../models/index
 
 const router = Router();
 
+router.get(['', '/'], (_request, response) => {
+  response.json({
+    apiBaseUrl,
+    resources: ['users', 'teams', 'activities', 'leaderboard', 'workouts'],
+  });
+});
+
 router.get('/health', (_request, response) => {
   response.json({ status: 'ok', apiBaseUrl });
 });
