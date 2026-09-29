@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
-function DataPage({ resource, title, description, columns, renderMobileTitle }) {
+function DataPage({ resource, endpoint, title, description, columns, renderMobileTitle }) {
   const [items, setItems] = useState([])
   const [pagination, setPagination] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -15,7 +15,7 @@ function DataPage({ resource, title, description, columns, renderMobileTitle }) 
       setError('')
 
       try {
-        const result = await fetchCollection(resource)
+        const result = await fetchCollection(resource, endpoint)
 
         if (!ignore) {
           setItems(result.items)
@@ -37,7 +37,7 @@ function DataPage({ resource, title, description, columns, renderMobileTitle }) 
     return () => {
       ignore = true
     }
-  }, [resource])
+  }, [endpoint, resource])
 
   return (
     <section className="content-panel">

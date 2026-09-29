@@ -18,8 +18,12 @@ export function normalizeCollection(payload) {
   }
 }
 
-export async function fetchCollection(resource) {
-  const response = await fetch(`${apiBaseUrl}/${resource}/`)
+export function buildApiEndpoint(resource) {
+  return `${apiBaseUrl}/${resource}/`
+}
+
+export async function fetchCollection(resource, endpoint = buildApiEndpoint(resource)) {
+  const response = await fetch(endpoint)
 
   if (!response.ok) {
     throw new Error(`Request failed for ${resource}: ${response.status}`)

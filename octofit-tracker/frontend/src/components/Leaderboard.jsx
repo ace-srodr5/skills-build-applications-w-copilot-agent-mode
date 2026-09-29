@@ -1,9 +1,14 @@
 import DataPage from './DataPage.jsx'
 
+const leaderboardEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`
+  : 'http://localhost:8000/api/leaderboard/'
+
 function Leaderboard() {
   return (
     <DataPage
       resource="leaderboard"
+      endpoint={leaderboardEndpoint}
       title="Leaderboard"
       description="Competitive standings based on points, participation, and weekly streaks."
       renderMobileTitle={(entry) => `#${entry.rank} ${entry.user?.displayName ?? 'Member'}`}

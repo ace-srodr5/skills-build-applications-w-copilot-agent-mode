@@ -1,10 +1,15 @@
 import { formatDate } from '../api.js'
 import DataPage from './DataPage.jsx'
 
+const activitiesEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 function Activities() {
   return (
     <DataPage
       resource="activities"
+      endpoint={activitiesEndpoint}
       title="Activities"
       description="Recent cardio, strength, and recovery sessions logged by OctoFit members."
       renderMobileTitle={(activity) => activity.activityType}

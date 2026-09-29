@@ -1,9 +1,14 @@
 import DataPage from './DataPage.jsx'
 
+const workoutsEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+  : 'http://localhost:8000/api/workouts/'
+
 function Workouts() {
   return (
     <DataPage
       resource="workouts"
+      endpoint={workoutsEndpoint}
       title="Workouts"
       description="Personalized workout suggestions for endurance, strength, and recovery."
       renderMobileTitle={(workout) => workout.title}

@@ -1,9 +1,14 @@
 import DataPage from './DataPage.jsx'
 
+const usersEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users/`
+  : 'http://localhost:8000/api/users/'
+
 function Users() {
   return (
     <DataPage
       resource="users"
+      endpoint={usersEndpoint}
       title="Users"
       description="Athlete and coach profiles synced from the OctoFit API."
       renderMobileTitle={(user) => user.displayName}
