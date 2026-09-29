@@ -1,0 +1,83 @@
+:root {
+  --text: #52615b;
+  --text-h: #14211d;
+  --bg: #f6faf7;
+  --panel-bg: #ffffff;
+  --banner-bg: #eef6f0;
+  --border: #d9e4dc;
+  --code-bg: #e7f1ea;
+  --accent: #0f7a64;
+  --accent-soft: #d9efe7;
+  --table-head: #f2f7f4;
+  --shadow: rgba(28, 58, 45, 0.08) 0 18px 40px;
+
+  --sans: Avenir, 'Avenir Next', Montserrat, 'Trebuchet MS', sans-serif;
+  --heading: Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 44px;
+  letter-spacing: 0;
+  line-height: 110%;
+  margin: 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+}
+h2 {
+  font-size: 22px;
+  line-height: 118%;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
