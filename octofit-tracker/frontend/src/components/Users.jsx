@@ -1,8 +1,9 @@
+import { buildApiEndpoint } from '../api.js'
 import DataPage from './DataPage.jsx'
 
 const usersEndpoint = import.meta.env.VITE_CODESPACE_NAME
   ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users/`
-  : 'http://localhost:8000/api/users/'
+  : buildApiEndpoint('users')
 
 function Users() {
   return (

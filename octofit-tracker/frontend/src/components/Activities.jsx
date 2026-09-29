@@ -1,9 +1,9 @@
-import { formatDate } from '../api.js'
+import { buildApiEndpoint, formatDate } from '../api.js'
 import DataPage from './DataPage.jsx'
 
 const activitiesEndpoint = import.meta.env.VITE_CODESPACE_NAME
   ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
-  : 'http://localhost:8000/api/activities/'
+  : buildApiEndpoint('activities')
 
 function Activities() {
   return (

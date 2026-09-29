@@ -16,7 +16,7 @@ When `VITE_CODESPACE_NAME` is present, the frontend calls:
 https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/[component]/
 ```
 
-When it is unset, the app safely falls back to `http://localhost:8000/api` to avoid `https://undefined-8000...` URLs.
+When it is unset, the app first tries to infer the Codespace name from the forwarded `5173.app.github.dev` browser hostname. If it cannot infer a Codespace name, it safely falls back to `http://localhost:8000/api` to avoid `https://undefined-8000...` URLs.
 
 ## Scripts
 

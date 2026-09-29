@@ -1,8 +1,9 @@
+import { buildApiEndpoint } from '../api.js'
 import DataPage from './DataPage.jsx'
 
 const leaderboardEndpoint = import.meta.env.VITE_CODESPACE_NAME
   ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`
-  : 'http://localhost:8000/api/leaderboard/'
+  : buildApiEndpoint('leaderboard')
 
 function Leaderboard() {
   return (
